@@ -1,0 +1,176 @@
+{
+  "global": {
+    "siteName": "EasyEdit",
+    "siteTagline": "Edit, convert and compress files. Free. Private. Instant.",
+    "heroHeadline": "Every file tool you need. Free.",
+    "heroSubhead": "Merge, compress, convert and edit files in seconds. No sign-up. Your files never leave your device.",
+    "searchPlaceholder": "Search tools, e.g. \"merge PDF\"",
+    "searchEmpty": "No tools match \"{query}\". Try a different word, or browse all tools.",
+    "uploadZoneDesktop": "Drag files here, or choose files",
+    "uploadZoneMobile": "Choose files",
+    "dragOver": "Drop to add",
+    "privacyBadge": "🔒 Runs on your device. Your file is never uploaded.",
+    "processing": "Working on it… {percent}%",
+    "cancel": "Cancel",
+    "successTitle": "Done! Your file is ready.",
+    "successDetail": "{oldSize} → {newSize} ({percent}% smaller)",
+    "download": "Download",
+    "startOver": "Start over",
+    "useInAnotherTool": "Use in another tool",
+    "copiedToast": "Copied to clipboard",
+    "footer": "Free to use. Built to respect your privacy.",
+    "emptyToolState": "Add a file to get started. Your file stays on your device.",
+    "firstVisitTip": "Tip: press / to search all tools.",
+    "howItWorks": "1. Choose a tool. 2. Add your file. 3. Download the result.",
+    "howItWorksStep1Title": "Choose a tool",
+    "howItWorksStep1Desc": "Select from our suite of free PDF, image, document, archive, and developer tools.",
+    "howItWorksStep2Title": "Add your file",
+    "howItWorksStep2Desc": "Drag & drop or select your files. Everything stays strictly inside your browser.",
+    "howItWorksStep3Title": "Download the result",
+    "howItWorksStep3Desc": "Get your modified file instantly without waiting for uploads or server queues.",
+    "allTools": "All Tools",
+    "categories": "Categories",
+    "popularTools": "Popular Tools",
+    "browseByCategory": "Browse by Category",
+    "privacyPromise": "Privacy Promise",
+    "privacyPromiseText": "Zero uploads. All processing happens locally in your browser. We never see your files.",
+    "faq": "Frequently Asked Questions",
+    "darkMode": "Dark mode",
+    "lightMode": "Light mode",
+    "systemTheme": "System theme"
+  },
+  "categories": {
+    "pdf": "PDF",
+    "image": "Image",
+    "document": "Document",
+    "developer": "Developer",
+    "spreadsheet": "Spreadsheet",
+    "archive": "Archive"
+  },
+  "errors": {
+    "wrongFileType": "That doesn't look like a {expected} file. Please choose a {extensions} file.",
+    "tooLarge": "This file is {size}. The limit for this tool is {limit}. Try compressing it first.",
+    "tooManyFiles": "You can add up to {n} files at once.",
+    "passwordProtectedPdf": "This PDF is password-protected. Remove the password and try again.",
+    "corruptedFile": "We couldn't read this file. It may be damaged. Try opening it on your device first.",
+    "outOfMemory": "Your device ran out of memory. Try a smaller file or close other tabs.",
+    "processingFailed": "We couldn't finish this task. Your original file is safe. Try again",
+    "compressionNoGain": "This PDF is already well optimized. We couldn't make it smaller.",
+    "strongPdfCompressionWarning": "Strong compression turns pages into images, so text can't be selected afterward. Continue?",
+    "pngJpgTransparency": "JPG doesn't support transparency. Transparent areas will become white.",
+    "invalidJson": "Line {line}, column {col}: {reason}",
+    "zipUnsafe": "This archive contains unsafe paths or is unusually large, so we stopped.",
+    "unsupportedBrowser": "Your browser is out of date. Please update to Chrome, Edge, Firefox or Safari.",
+    "cancelled": "Cancelled. Your files are still here."
+  },
+  "tools": {
+    "pdf-merge": {
+      "name": "Merge PDF",
+      "h1": "Merge PDF files",
+      "description": "Combine several PDFs into one document, in the order you choose.",
+      "primaryButton": "Merge PDFs"
+    },
+    "pdf-split": {
+      "name": "Split PDF",
+      "h1": "Split a PDF",
+      "description": "Pull out pages or divide a PDF into smaller files.",
+      "primaryButton": "Split PDF"
+    },
+    "pdf-rotate": {
+      "name": "Rotate PDF",
+      "h1": "Rotate PDF pages",
+      "description": "Turn pages the right way up, one by one or all at once.",
+      "primaryButton": "Rotate PDF"
+    },
+    "pdf-organize": {
+      "name": "Organize PDF",
+      "h1": "Organize PDF pages",
+      "description": "Reorder, delete or duplicate pages with a simple drag.",
+      "primaryButton": "Save PDF"
+    },
+    "pdf-to-image": {
+      "name": "PDF to JPG/PNG",
+      "h1": "Convert PDF to images",
+      "description": "Turn every page into a high-quality image.",
+      "primaryButton": "Convert to images"
+    },
+    "pdf-from-image": {
+      "name": "Image to PDF",
+      "h1": "Convert images to PDF",
+      "description": "Put your photos or scans into one PDF.",
+      "primaryButton": "Create PDF"
+    },
+    "pdf-compress": {
+      "name": "Compress PDF",
+      "h1": "Compress PDF",
+      "description": "Make your PDF smaller so it's easy to email or upload.",
+      "primaryButton": "Compress PDF"
+    },
+    "image-resize": {
+      "name": "Resize Image",
+      "h1": "Resize image",
+      "description": "Set an exact size in pixels or percent.",
+      "primaryButton": "Resize image"
+    },
+    "image-compress": {
+      "name": "Compress Image",
+      "h1": "Compress image",
+      "description": "Shrink file size while keeping it looking great.",
+      "primaryButton": "Compress image"
+    },
+    "image-convert": {
+      "name": "Convert Image",
+      "h1": "Convert image",
+      "description": "Switch between JPG, PNG and WebP.",
+      "primaryButton": "Convert image"
+    },
+    "document-word-counter": {
+      "name": "Word Counter",
+      "h1": "Word counter",
+      "description": "Count words, characters and reading time as you type.",
+      "primaryButton": ""
+    },
+    "document-case-converter": {
+      "name": "Case Converter",
+      "h1": "Case converter",
+      "description": "Change text to uppercase, lowercase, title case and more.",
+      "primaryButton": ""
+    },
+    "developer-json-formatter": {
+      "name": "JSON Formatter and Validator",
+      "h1": "JSON formatter and validator",
+      "description": "Make JSON readable and find errors fast.",
+      "primaryButton": "Format"
+    },
+    "developer-base64": {
+      "name": "Base64 Encode/Decode",
+      "h1": "Base64 encode and decode",
+      "description": "Convert text or files to and from Base64.",
+      "primaryButton": "Convert"
+    },
+    "spreadsheet-csv-json": {
+      "name": "CSV ⇄ JSON",
+      "h1": "CSV and JSON converter",
+      "description": "Switch between spreadsheet data and JSON.",
+      "primaryButton": "Convert"
+    },
+    "archive-zip-create": {
+      "name": "ZIP Creator",
+      "h1": "Create a ZIP file",
+      "description": "Bundle files into one compressed archive.",
+      "primaryButton": "Create ZIP"
+    },
+    "archive-zip-extract": {
+      "name": "ZIP Extractor",
+      "h1": "Open a ZIP file",
+      "description": "See what's inside and extract the files you want.",
+      "primaryButton": "Extract"
+    },
+    "document-markdown-to-pdf": {
+      "name": "Markdown to PDF",
+      "h1": "Markdown to PDF",
+      "description": "Turn your Markdown into a clean PDF.",
+      "primaryButton": "Create PDF"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "EasyEdit",
+  "short_name": "EasyEdit",
+  "description": "Edit, convert and compress files. Free. Private. Instant.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
+

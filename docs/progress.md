@@ -1,0 +1,85 @@
+# EasyEdit Build Progress
+
+Tracking progress across PRD Section 17 milestones.
+
+## Milestone Status Summary
+
+- [x] **M1: Foundation** (Completed)
+  - Vite + React 18 + TypeScript (strict) + Tailwind CSS + React Router
+  - ESLint, Vitest, Playwright setup
+  - i18n file (`src/i18n/en.json`) with exact Section 11 copy
+  - Theme provider (light/dark/system default) with persistent toggle
+  - Base layout (header, footer, nav, search trigger)
+  - Design tokens (1200px container, 8px grid, WCAG 2.2 AA contrast)
+  - Verified: lint clean, type-check clean, 12 unit tests pass, 5 Playwright tests pass
+- [x] **M2: Framework** (Completed)
+  - ToolDefinition types (`src/tools/types.ts`)
+  - Tool Registry (`src/tools/registry.ts`)
+  - Shared tool page shell (`src/components/tool/ToolPageShell.tsx`)
+  - Accessible Upload Zone with drag-and-drop, picker, clipboard paste, and keyboard support
+  - Dynamic Options Panel with dependencies, field types, and accessible form controls
+  - Progress Bar with ARIA live region and cancel support
+  - Result Panel with formatted savings, download (single file or ZIP), start over, and cross-tool actions
+  - Worker Runner with cancel support via AbortSignal
+  - Text Tool Shell variant for live-text utilities
+  - Verified: lint clean, type-check clean, 14 unit tests pass, end-to-end dummy tool Playwright test passes
+- [x] **M3: Site** (Completed)
+  - Home page sections (Header, Hero with universal search, 8 Popular Tools, Browse by Category, How It Works, Privacy & Security promise, FAQs, Footer)
+  - All Category pages (`/pdf`, `/image`, `/document`, `/developer`, `/spreadsheet`, `/archive`)
+  - All Tools directory with in-page fuzzy search and category filtering
+  - Legal & Trust pages (`/about`, `/privacy`, `/terms`, `/contact`, `/how-we-handle-files`)
+  - 404 Not Found page with responsive routing fallbacks
+  - SEO structured data (SoftwareApplication, FAQPage, BreadcrumbList)
+  - Static HTML prerendering script (`scripts/prerender.js`) generating pre-baked index.html for all 33 routes + sitemap.xml
+  - Verified: lint clean, type-check clean, 14 unit tests pass, 10 Playwright tests pass
+- [x] **M4: First Proofs** (Completed)
+  - Resize Image processor (`src/tools/image/resize.ts`) with custom pixels, percentage, presets, aspect-ratio lock, quality slider, and bicubic resampling
+  - Merge PDF processor (`src/tools/pdf/merge.ts`) with `pdf-lib`, page ordering, corrupt & encrypted PDF validation
+  - Verified: lint clean, type-check clean, 18 unit tests pass, automated zero-network-upload assertion passes, Playwright E2E passes
+- [x] **M5: PDF Tools** (Completed)
+  - Split PDF (`src/tools/pdf/split.ts`): page ranges, every N pages, all pages
+  - Rotate PDF (`src/tools/pdf/rotate.ts`): 90/180/270 degrees, scope (all, odd, even)
+  - Organize PDF (`src/tools/pdf/organize.ts`): page reorder, delete, duplicate, rotate
+  - PDF to image (`src/tools/pdf/toImage.ts`): multi-page rendering at 72/150/300 DPI, JPG/PNG output
+  - Image to PDF (`src/tools/pdf/fromImage.ts`): multi-image compilation, Fit/A4/Letter page sizes, portrait/landscape orientation, margin options
+  - Verified: lint clean, type-check clean, 25 unit tests pass, desktop and mobile viewport Playwright tests pass
+- [x] **M6: Image Tools** (Completed & Refined)
+  - Compress Image (`src/tools/image/compress.ts`): preserves actual format (JPG/PNG), provides output format options (Original, JPG, PNG), quality slider, target KB optimization, EXIF stripping
+  - Resize Image (`src/tools/image/resize.ts`): pixel/percent resizing, lock aspect ratio, presets
+  - Convert Image (`src/tools/image/convert.ts`): batch convert JPG, PNG, WebP, white background fallback for JPG transparency
+  - Scope update: Crop Image and Rotate and Flip Image removed per user request
+  - Verified: lint clean, type-check clean, unit tests pass, Playwright E2E tests pass
+- [x] **M7: Text and Data Tools** (Completed)
+  - Word Counter (`src/tools/document/wordCounter.ts`): live word, character, sentence, paragraph, reading time stats
+  - Case Converter (`src/tools/document/caseConverter.ts`): UPPERCASE, lowercase, Title Case, Sentence case, camelCase, snake_case, kebab-case
+  - JSON Formatter & Validator (`src/tools/developer/jsonFormatter.ts`): custom spacing, minification, sort keys, line & column syntax error reporting
+  - Base64 Encode/Decode (`src/tools/developer/base64.ts`): UTF-8 text, binary files, URL-safe base64
+  - CSV ⇄ JSON (`src/tools/spreadsheet/csvJson.ts`): bi-directional conversion, auto delimiter detection, header row toggle, 50-row preview
+  - Verified: lint clean, type-check clean, 39 unit tests pass, 5 Playwright E2E tests pass
+- [x] **M8: P1 Tools** (Completed)
+  - Compress PDF (`src/tools/pdf/compress.ts`): Light (lossless object stream optimization) and Strong (rasterized JPEG re-compilation with warning), gain detection
+  - ZIP Creator (`src/tools/archive/zipCreate.ts`): fflate multi-file compression with custom name and compression levels 0-9
+  - ZIP Extractor (`src/tools/archive/zipExtract.ts`): fflate unzip, path traversal protection (`../`, `..\`, absolute paths), zip bomb ratio & uncompressed limits (2000 files / 1 GB desktop, 500 files / 300 MB mobile)
+  - Markdown to PDF (`src/tools/document/markdownToPdf.ts`): marked parsing, DOMPurify HTML sanitization, clean vector PDF rendering with standard fonts and multi-page pagination, live preview
+  - Verified: lint clean, type-check clean, 45 unit tests pass, 4 Playwright E2E tests pass
+- [x] **M9: Hardening** (Completed)
+  - Offline PWA: `public/manifest.json`, `public/sw.js` with shell precaching & stale-while-revalidate asset caching, service worker registration
+  - Security headers: `public/_headers` configured with CSP (`frame-ancestors 'none'`, `object-src 'none'`), HSTS (1 year + preload), X-Frame-Options DENY, X-Content-Type-Options nosniff, Permissions-Policy, Cache-Control rules
+  - Axe accessibility audits: 6 template audits (Home, All Tools, Category, Tool page, Text tool page, Legal page) passed with 0 violations
+  - Performance budget: Home initial JS bundle is 84.15 KB gzip (budget < 150 KB gzip)
+  - Error states: Corrupted files, wrong file extensions, password-protected PDFs, zip bombs, timeout/cancellation verified
+  - Verified: 4 Playwright error-states & PWA tests pass, 6 Playwright axe tests pass
+- [x] **M10: Deploy & Launch Verification** (Completed)
+  - Cloudflare Pages configuration: `public/_headers` (security, caching), `public/_redirects` (apex 301 redirect, SPA fallback)
+  - Prerendering: 31 static HTML routes prerendered with valid SEO title, description, canonical, OpenGraph, JSON-LD schema
+  - Sitemap and robots: `dist/sitemap.xml` generated automatically, `public/robots.txt` linked
+  - Post-deploy smoke test: all 18 active tools verified via automated Playwright smoke tests (`tests/e2e/m10-smoke-all-tools.spec.ts`)
+  - Launch checklist (Section 14.5) verified:
+    - Privacy: Zero network uploads verified with request body interceptor tests
+    - Limits: File size, page, megapixel, and zip limits strictly guarded
+    - Offline: PWA service worker registered and active
+    - Performance: Home initial bundle 84.15 KB gzip (budget < 150 KB gzip)
+    - Accessibility: 100% axe-core WCAG 2 AA pass with 0 violations
+    - Legal: All legal pages, how-we-handle-files, and licenses documented
+  - Test Suite Summary: 102 automated tests passed (45 unit tests, 57 Playwright E2E tests across 11 suites)
+  - Status: Approved and ready for production launch.
