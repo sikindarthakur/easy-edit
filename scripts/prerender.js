@@ -120,7 +120,7 @@ const templateHtml = fs.readFileSync(templatePath, 'utf8');
 console.log(`Prerendering ${allRoutes.length} static HTML routes (${toolRoutes.length} tools)...`);
 
 for (const item of allRoutes) {
-  const canonicalUrl = `https://easyedit.app${item.route === '/' ? '' : item.route}`;
+  const canonicalUrl = `https://easy-edit-seven.vercel.app${item.route === '/' ? '' : item.route}`;
 
   let html = templateHtml;
   // Replace title
@@ -153,7 +153,7 @@ for (const item of allRoutes) {
 const sitemapEntries = allRoutes
   .map(
     (item) => `  <url>
-    <loc>https://easyedit.app${item.route === '/' ? '' : item.route}</loc>
+    <loc>https://easy-edit-seven.vercel.app${item.route === '/' ? '' : item.route}</loc>
     <changefreq>${item.route === '/' ? 'daily' : 'weekly'}</changefreq>
     <priority>${item.route === '/' ? '1.0' : item.route.split('/').length === 2 ? '0.8' : '0.9'}</priority>
   </url>`

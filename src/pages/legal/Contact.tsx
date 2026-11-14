@@ -22,10 +22,10 @@ export const ContactPage: React.FC = () => {
               For general feedback, bug reports, and partnership inquiries:
             </p>
             <a
-              href="mailto:hello@easyedit.app"
+              href="mailto:support.easyedit@gmail.com"
               className="mt-2 inline-block font-semibold text-brand-600 hover:underline dark:text-brand-400"
             >
-              hello@easyedit.app
+              support.easyedit@gmail.com
             </a>
           </div>
         </div>
@@ -40,10 +40,10 @@ export const ContactPage: React.FC = () => {
               For security vulnerability disclosures or data handling verification:
             </p>
             <a
-              href="mailto:security@easyedit.app"
+              href="mailto:support.easyedit@gmail.com"
               className="mt-2 inline-block font-semibold text-brand-600 hover:underline dark:text-brand-400"
             >
-              security@easyedit.app
+              support.easyedit@gmail.com
             </a>
           </div>
         </div>

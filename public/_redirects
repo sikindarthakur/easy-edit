@@ -1,5 +1,2 @@
 # Redirect www to apex
-https://www.easyedit.app/* https://easyedit.app/:splat 301!
-
-# SPA fallback
-/* /index.html 200
+https://easy-edit-seven.vercel.app/* https://easy-edit-seven.vercel.app/:splat 301!
